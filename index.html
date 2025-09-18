@@ -48,83 +48,37 @@
       font-weight: 600; color: var(--blue);
     }
     section {
-      max-width: 800px; margin: 3rem auto; padding: 0 1rem;
+      max-width: 900px; margin: 3rem auto; padding: 0 1rem;
     }
     section h2 {
       font-family: 'Lora', serif;
       font-size: 1.8rem; margin-bottom: 1rem;
       color: var(--blue);
     }
-    .project-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .project-item {
+    .project {
+      position: relative;
       background: var(--bg);
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
+      padding: 1rem 1.5rem 3rem 1.5rem;
+      margin-bottom: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 8px var(--card-shadow);
-      transition: transform .2s, box-shadow .2s;
-      cursor: pointer;
     }
-    .project-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px var(--card-shadow);
-    }
-    .project-item strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
+    .project h3 {
+      margin-top: 0;
       color: var(--blue);
     }
-    .mini-preview {
+    .project iframe {
       width: 100%;
       height: 200px;
       border: 1px solid #ddd;
       border-radius: 6px;
       margin-top: 0.5rem;
-      pointer-events: none; /* para no interferir con el click */
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.7);
-    }
-    .modal-content {
-      background-color: var(--bg);
-      margin: 5% auto;
-      padding: 1rem;
-      border-radius: 8px;
-      max-width: 90%;
-      height: 80%;
-      position: relative;
-    }
-    .modal iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 6px;
-    }
-    .close {
-      color: var(--blue);
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      cursor: pointer;
+      pointer-events: none; /* para no interferir con click */
     }
     .open-new {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
       background: var(--bg);
       border: 1px solid var(--card-shadow);
       border-radius: 6px;
@@ -133,14 +87,17 @@
       padding: 4px 8px;
       font-size: 0.85rem;
       cursor: pointer;
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
       box-shadow: 0 2px 6px var(--card-shadow);
+      text-decoration: none;
     }
     .open-new:hover {
       background: var(--blue);
       color: #fff;
+    }
+    footer {
+      text-align: center; padding: 2rem 1rem;
+      font-size: 0.9rem; color: #777;
+      border-top: 1px solid #eaeaea;
     }
   </style>
 </head>
@@ -172,38 +129,35 @@
   <!-- Portfolio -->
   <section id="portfolio">
     <h2>Portfolio</h2>
-    <ul class="project-list">
-      <li class="project-item" onclick="openModal('WorkshopVaR.html')">
-        <strong>Value at Risk Simulation</strong>
-        <span>Historical simulation and parametric VaR in Python.</span>
-        <iframe src="projects/WorkshopVaR.html" class="mini-preview"></iframe>
-      </li>
-      <li class="project-item" onclick="openModal('Workshop_MonteCarlo.html')">
-        <strong>Scenario Analysis</strong>
-        <span>NPV and IRR of a Capital Budgeting project using 10,000 Monte Carlo Simulations.</span>
-        <iframe src="projects/Workshop_MonteCarlo.html" class="mini-preview"></iframe>
-      </li>
-      <li class="project-item" onclick="openModal('ProyectoEconometria.html')">
-        <strong>Linear Regression Model</strong>
-        <span>Linear regression model in R to test the effect of demographic, social, and technological factors on economic growth.</span>
-        <iframe src="projects/ProyectoEconometria.html" class="mini-preview"></iframe>
-      </li>
-      <li class="project-item" onclick="openModal('garch-models.html')">
-        <strong>GARCH Models</strong>
-        <span>Volatility forecasting with GARCH(1,1) and EGARCH.</span>
-        <iframe src="projects/garch-models.html" class="mini-preview"></iframe>
-      </li>
-    </ul>
-  </section>
 
-  <!-- Modal -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <iframe id="modalFrame" src=""></iframe>
-      <button class="open-new" id="openNewBtn">Open in New Tab</button>
+    <div class="project">
+      <h3>Value at Risk Simulation</h3>
+      <p>Historical simulation and parametric VaR in Python.</p>
+      <iframe src="projects/WorkshopVaR.html"></iframe>
+      <a href="projects/WorkshopVaR.html" target="_blank" class="open-new">Open in New Tab</a>
     </div>
-  </div>
+
+    <div class="project">
+      <h3>Scenario Analysis</h3>
+      <p>NPV and IRR of a Capital Budgeting project using 10,000 Monte Carlo Simulations.</p>
+      <iframe src="projects/Workshop_MonteCarlo.html"></iframe>
+      <a href="projects/Workshop_MonteCarlo.html" target="_blank" class="open-new">Open in New Tab</a>
+    </div>
+
+    <div class="project">
+      <h3>Linear Regression Model</h3>
+      <p>Linear regression model in R to test the effect of demographic, social, and technological factors on economic growth.</p>
+      <iframe src="projects/ProyectoEconometria.html"></iframe>
+      <a href="projects/ProyectoEconometria.html" target="_blank" class="open-new">Open in New Tab</a>
+    </div>
+
+    <div class="project">
+      <h3>GARCH Models</h3>
+      <p>Volatility forecasting with GARCH(1,1) and EGARCH.</p>
+      <iframe src="projects/garch-models.html"></iframe>
+      <a href="projects/garch-models.html" target="_blank" class="open-new">Open in New Tab</a>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section id="contact">
@@ -214,27 +168,6 @@
   <footer>
     © 2025 Diego Alonso. All rights reserved.
   </footer>
-
-  <script>
-    const modal = document.getElementById("projectModal");
-    const modalFrame = document.getElementById("modalFrame");
-    const openNewBtn = document.getElementById("openNewBtn");
-
-    function openModal(project) {
-      modalFrame.src = "projects/" + project;
-      modal.style.display = "block";
-      openNewBtn.onclick = () => window.open("projects/" + project, "_blank");
-    }
-
-    function closeModal() {
-      modal.style.display = "none";
-      modalFrame.src = "";
-    }
-
-    window.onclick = function(event) {
-      if(event.target == modal) { closeModal(); }
-    }
-  </script>
 
 </body>
 </html>
