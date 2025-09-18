@@ -2,106 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Diego Alonso | Finance Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --blue: #0a2342;
+      --text: #333;
+      --bg: #fff;
+      --card-shadow: rgba(0, 0, 0, 0.05);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
+      margin: 0; padding: 0;
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #1a1a1a;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
     }
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #eaeaea;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+    }
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: 3rem; 
+      margin-bottom: 0.2em; 
+      color: var(--blue);
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0.2em 0;
     }
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      margin: auto;
-      padding: 1rem;
+      max-width: 900px; margin: auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eaeaea;
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg);
     }
     nav a {
+      margin-left: 2rem;
       text-decoration: none;
-      color: #1a1a1a;
-      margin-left: 1rem;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #0066cc;
-    }
-    .hero {
-      text-align: center;
-      padding: 6rem 1rem;
-      background: #f0f4f9;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #333333;
+      font-weight: 600; color: var(--blue);
     }
     section {
-      max-width: 900px;
-      margin: auto;
-      padding: 3rem 1rem;
+      max-width: 800px; margin: 3rem auto; padding: 0 1rem;
     }
     section h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
+      font-family: 'Lora', serif;
+      font-size: 1.8rem; margin-bottom: 1rem;
+      color: var(--blue);
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .project-item {
+      background: var(--bg);
+      padding: 1rem 1.5rem;
       margin-bottom: 1rem;
-      color: #0066cc;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--card-shadow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .project-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px var(--card-shadow);
+    }
+    .project-item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-item strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: var(--blue);
     }
     footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #ffffff;
+      text-align: center; padding: 2rem 1rem;
+      font-size: 0.9rem; color: #777;
       border-top: 1px solid #eaeaea;
-      color: #555;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav>
+    <div><strong>Diego Alonso</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header / Hero -->
   <header>
-    <nav>
-      <div><strong>Diego Alonso</strong></div>
-      <div>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+    <h1>Diego Alonso</h1>
+    <p>Finance & Economics · ITAM</p>
   </header>
 
-  <section class="hero">
-    <h1>Diego Alonso</h1>
-    <p>Finance & Risk Management | CFA Candidate | ITAM Economics</p>
-  </section>
-
+  <!-- About Me -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      Passionate about finance, risk management, and asset management, with a strong academic background in Economics from ITAM. 
-      Skilled in Python, Excel, and financial modeling, with experience applying quantitative techniques such as Monte Carlo simulations, 
-      GARCH models, and Value at Risk (VaR). Currently preparing for the CFA Level I exam (August 2025) with the goal of building 
-      an international career in investment management and corporate finance.
-    </p>
+    <p>Passionate about financial analysis, risk management, and financial advisory. Focused on applying quantitative methods and data-driven approaches to solve complex financial problems.</p>
+    <p>Currently studying my last semester of dual-degree programs in Finance and Economics at ITAM, building a solid foundation for a career in global finance.</p>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <ul class="project-list">
+      <li class="project-item">
+        <a href="WorkshopVaR.ipynb" target="_blank">
+          <strong>Value at Risk Simulation</strong>
+          <span>Historical simulation and parametric VaR in Python.</span>
+        </a>
+      <li class="project-item">
+        <a href="Workshop_MonteCarlo.ipynb" target="_blank">
+          <strong>Scenario Analysis </strong>
+          <span>NPV and IRR of a Capital Budgeting proyect using 10,000 Monte Carlo Simulations.</span>
+        </a>
+      </li>
+      <li class="project-item">
+        <a href="ProyectoEconometria.html" target="_blank">
+          <strong>Lineal Regression Model</strong>
+          <span>Lineal regression model in R to test the effect of demographic, social, and technological factors on economic growth.</span>
+        </a>
+      </li>
+      <li class="project-item">
+        <a href="projects/garch-models.ipynb" target="_blank">
+          <strong>GARCH Models</strong>
+          <span>Description: Volatility forecasting with GARCH(1,1) and EGARCH.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let's connect: <a href="mailto:diego.alonsog24@gmail.com">diego.alonsog24@gmail.com</a> | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
   </section>
 
   <footer>
     © 2025 Diego Alonso. All rights reserved.
   </footer>
+
 </body>
 </html>
